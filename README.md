@@ -1,65 +1,87 @@
-# Cluster API
+# Introduction
+
+*To share this book use the icons in the top-right of the menu.*
+
+**Note:** Impatient readers may head straight to [Existing Providers](
+getting_started/existing_providers.md) section.
+
 ## What is the Cluster API?
+  
+The Cluster API is a Kubernetes project to bring declarative, [Kubernetes-style 
+APIs][k8s-apis] to cluster creation, configuration, and management. It
+provides optional, additive functionality on top of core Kubernetes. By making
+use of structured nature of kubernetes APIs it is possible to build higher-level
+cloud agnostic tools which improve user experience by allowing for greater
+ease of use and more sophisticated automation.
 
-The Cluster API is a Kubernetes project to bring declarative, Kubernetes-style
-APIs to cluster creation, configuration, and management. It provides optional,
-additive functionality on top of core Kubernetes.
+[k8s-apis]: https://kubernetes.io/docs/concepts/overview/kubernetes-api/
 
-Note that Cluster API effort is still in the prototype stage while we get
-feedback on the API types themselves. All of the code here is to experiment with
-the API and demo its abilities, in order to drive more technical feedback to the
-API design. Because of this, all of the prototype code is rapidly changing.
+## Who is this book for now?
 
-![Cluster API Architecture](architecture.png "Cluster API Architecture")
+#### Kubernetes Developers
 
-To learn more, see the [Cluster API KEP][cluster-api-kep].
+Kubernetes Developers will learn how to develop Cluster API providers which 
+allow Kubernetes to be deployed to ever more environments, thereby increasing 
+how often and where users can deploy their applications.
 
-## Get involved!
+Including the ability to:
 
-* Join the [sig-cluster-lifecycle](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
-Google Group for access to documents and calendars.
+- Develop new Cluster and Machine controllers.
+- Develop automation on top of MachineSets and MachineDeployments as well
+as other Cluster API resources. For example,
+  - Cloud agnostic Upgrade and Repair tools.
+  - Cluster Autoscalars.
+  - Etc.
 
-* Join our Cluster API working group sessions
-  * Weekly on Wednesdays @ 10:00 PT on [Zoom][zoomMeeting]
-  * Previous meetings: \[ [notes][notes] | [recordings][recordings] \]
+## Who else will this book be for in the future?
 
-* Provider implementer office hours
-  * Weekly on Mondays @ 09:30 PT and Tuesdays @ 12:00 PT on [Zoom][zoomMeeting]
-  * Previous meetings: \[ [notes][implementerNotes] \]
+#### Kubernetes Users
 
-* Chat with us on [Slack](http://slack.k8s.io/): #cluster-api
+A Kubernetes User can be an Application User, Developer, or anyone else who
+needs access to a Kubernetes cluster. One of the aims of the Cluster API
+project is to leverage the relative uniformity of Kubernetes APIs and 
+associated tooling to make it easier for ordinary users to access computational
+resources in a portable way.
 
-## Provider Implementations
+#### Infrastructure Engineers
 
-The code in this repository is independent of any specific deployment environment.
-Provider specific code is being developed in separate repositories, some of which
-are also sponsored by SIG-cluster-lifecycle:
+Infrastructure Engineers will learn the fundamental concepts of how Kubernetes
+clusters are built according to best practices, and how they can be managed
+through Kubernetes native abstractions.
 
-  * AWS, https://github.com/kubernetes-sigs/cluster-api-provider-aws
-  * AWS/Openshift, https://github.com/openshift/cluster-operator
-  * Azure, https://github.com/platform9/azure-provider
-  * Baidu Cloud, https://github.com/baidu/cluster-api-provider-baiducloud
-  * DigitalOcean, https://github.com/kubernetes-sigs/cluster-api-provider-digitalocean
-  * GCE, https://github.com/kubernetes-sigs/cluster-api-provider-gcp
-  * OpenStack, https://github.com/kubernetes-sigs/cluster-api-provider-openstack
-  * Tencent Cloud, https://github.com/TencentCloud/cluster-api-provider-tencent
-  * vSphere, https://github.com/kubernetes-sigs/cluster-api-provider-vsphere
+Including the ability to:
 
-## API Adoption
+- Create reproducable Kubernetes clusters.
+- Create hybrid cloud environments which optimize for cost, performance, and
+reliability. 
 
-Following are the implementations managed by third-parties adopting the standard cluster-api and/or machine-api being developed here.
+## Resources
 
-  * Kubermatic machine-controller, https://github.com/kubermatic/machine-controller/tree/master
-  * Machine API Operator, https://github.com/openshift/machine-api-operator/tree/master
-  * Machine-controller-manager, https://github.com/gardener/machine-controller-manager/tree/cluster-api
+GitBook: [book.cluster-api.sigs.k8s.io](http://book.cluster-api.sigs.k8s.io)
+GitHub Repo: [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api)
+Slack channel: [#cluster-api](http://slack.k8s.io/#cluster-api)
+Google Group: [kubernetes-sig-cluster-lifecycle@googlegroups.com](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 
-## Getting Started
-### Prerequisites
-* `kubectl` is required, see [here](http://kubernetes.io/docs/user-guide/prereqs/).
-* `clusterctl` is a SIG-cluster-lifecycle sponsored tool to manage Cluster API clusters. See [here](cmd/clusterctl)
+## Navigating this book
 
-[cluster-api-kep]: https://github.com/kubernetes/community/blob/master/keps/sig-cluster-lifecycle/0003-cluster-api.md
-[notes]: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
-[recordings]: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-[zoomMeeting]: https://zoom.us/j/166836624
-[implementerNotes]: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
+This section describes how to use the navigation elements of this book
+
+##### Code Navigation
+
+Code samples may be either displayed to the side of the corresponding 
+documentation, or inlined immediately afterward.  This setting may be toggled 
+using the split-screen icon at the left side of the top nav.
+
+##### Table of Contents
+
+The table of contents may be hidden using the hamburger icon at the left side 
+of the top nav.
+
+##### OS / Language Navigation
+
+Some chapters have code snippets for multiple OS or Languages.  These chapters 
+will display OS or Language selections at the right side of the top nav, which 
+may be used to change the OS or Language of the examples shown.
+
+<!-- References -->
+
